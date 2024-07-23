@@ -1,0 +1,12 @@
+version: 2 
+
+sources: 
+  - name: gz_raw_data
+    description: this is the raw date we are using
+    tables:
+      - name: raw_gz_product
+        description: table des produits
+      - name : raw_gz_sales
+        description: tables des ventes
+      - name : raw_gz_ship
+        description: tables des frais liés aux commandes
