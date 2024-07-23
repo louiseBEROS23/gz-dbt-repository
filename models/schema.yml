@@ -14,3 +14,45 @@ sources:
       - name: ship
         identifier: raw_gz_ship
         description: tables des frais liés aux commandes
+
+models:
+  - name: stg_raw__product
+    description: table des produits
+    columns:
+      - name: products_id
+        description: primary key
+        tests:
+          - unique
+          - not_null
+      - name: purchase_prices
+        description: prix d'achat des produits
+  - name: stg_raw__ship
+    description: table des commandes
+    columns:
+      - name: orders_id
+        description: numero des commandes
+        tests:
+          - unique
+          - not_null
+      - name: shipping_fee
+        description: envoie des commandes
+      - name: logcost
+        description: cout de logistique
+      - name: ship_cost
+        description: cout de l'envoi
+  - name: stg_raw__sales
+    description: tables des ventes 
+    columns:
+      - name: date_date
+        description: date des ventes
+      - name: orders_id
+        description: nb de commandes
+      - name: products_id
+        description: numero des produits
+      - name: revenue
+        description: ca
+      - name: quantity
+        description: quantite de products vendus
+
+  
+              
