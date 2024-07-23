@@ -2,11 +2,15 @@ version: 2
 
 sources: 
   - name: gz_raw_data
+    schema: raw
     description: this is the raw date we are using
     tables:
-      - name: raw_gz_product
+      - identifier: raw_gz_product
+        name:  product
         description: table des produits
-      - name : raw_gz_sales
+      - identifier : raw_gz_sales
+        name: sales
         description: tables des ventes
-      - name : raw_gz_ship
+      - identifier: raw_gz_ship
+        name: ship
         description: tables des frais liés aux commandes
