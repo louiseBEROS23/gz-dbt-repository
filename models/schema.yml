@@ -129,6 +129,9 @@ models:
     columns:
       - name: date_date
         description: date des campaign
+        tests:
+          - unique
+          - not_null
       - name: nb_transactions
         description: nombre de transaction
       - name: revenue
