@@ -14,6 +14,19 @@ sources:
       - name: ship
         identifier: raw_gz_ship
         description: tables des frais liés aux commandes
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: données de la campagne fb 
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: données de la campagne criteo
+      - name: bing
+        identifier: raw_gz_bing
+        description: données de la campagne bing
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: données de la campagne adwords
+      
 
 models:
   - name: stg_raw__product
@@ -53,7 +66,114 @@ models:
         description: ca
       - name: quantity
         description: quantite de products vendus
-  
+  - name: int_campaign.sql
+    description: table des campagnes
+    columns:
+      - name: date_date
+        description: date des campaign
+      - name: paid_source
+        description: source des paiements
+      - name: campaign_key
+        description: clé de la campaign 
+      - name: campaign_name
+        description: nom de la campaign 
+      - name: ads_cost
+        description: cout de la campaign 
+      - name: impression
+        description: nombres d'impressions
+      - name: click
+        description: nombres de clicks
+  - name: int_campaign_day.sql
+    description: table du cout des campagnes publiictaires par jours
+    columns:
+    - name: date_date
+      description: date des jours de campaign
+      tests:
+        - unique
+        - not_null
+    - name: ads_cost
+      description: sum des cout publicitaires par jour
+    - name: ads_impression
+      description: sum des impressions par jour
+    - name: ads_click
+      description: sum des click par jour
+  - name: stg_raw__ship
+    description: table des commandes
+    columns:
+      - name: orders_id
+        description: numero des commandes
+        tests:
+          - unique
+          - not_null
+      - name: shipping_fee
+        description: envoie des commandes
+      - name: logcost
+        description: cout de logistique
+      - name: ship_cost
+        description: cout de l'envoi
+  - name: stg_raw__sales
+    description: tables des ventes 
+    columns:
+      - name: date_date
+        description: date des ventes
+      - name: orders_id
+        description: nb de commandes
+      - name: products_id
+        description: numero des produits
+      - name: revenue
+        description: ca
+      - name: quantity
+        description: quantite de products vendus
+  - name: int_campaigns_day.sql
+    description: table campaign par jour
+    columns:
+      - name: date_date
+        description: date des campaign
+      - name: ads_cost
+        description: cout publicitaires
+      - name: ads_impression
+        description: impression
+      - name: ads_click
+        description: clicks
+  - name: finance_campaigns_day.sql
+    description: table des couts publicitaires
+    columns:
+      - name: date_date
+        description: date des campaign
+        tests:
+          - unique
+          - not_null
+      - name: nb_transactions
+        description: nombre de transaction
+      - name: revenue
+        description: revenue de la campaign
+      - name: average_basket
+        description: panier moyen 
+      - name: average_basket_bis
+        description: panier moyen bis ? 
+      - name: margin
+        description: marge commerciale
+      - name: operational_margin
+        description: marge opérationnelle
+      - name: purchase_cost
+        description: cout d'achat
+      - name: shipping_fee
+        description: cout d'envoie des commandes
+      - name: logcost
+        description: cout d'ahceminement des commandes
+      - name: ship_cost
+        description: cout d'envoie 
+      - name: quantity
+        description: nb de qty vendu 
+      - name: ads_margin
+        description: marge publicitaire
+
+
+
+
+
+
+
 
   
               
