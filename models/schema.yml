@@ -83,6 +83,20 @@ models:
         description: nombres d'impressions
       - name: click
         description: nombres de clicks
+  - name: int_campaign_day.sql
+    description: table du cout des campagnes publiictaires par jours
+    columns:
+    - name: date_date
+      description: date des jours de campaign
+      tests:
+        - unique
+        - not_null
+    - name: ads_cost
+      description: sum des cout publicitaires par jour
+    - name: ads_impression
+      description: sum des impressions par jour
+    - name: ads_click
+      description: sum des click par jour
 
 
 
