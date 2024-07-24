@@ -124,6 +124,17 @@ models:
         description: ca
       - name: quantity
         description: quantite de products vendus
+  - name: int_campaigns_day.sql
+    description: table campaign par jour
+    columns:
+      - name: date_date
+        description: date des campaign
+      - name: ads_cost
+        description: cout publicitaires
+      - name: ads_impression
+        description: impression
+      - name: ads_click
+        description: clicks
   - name: finance_campaigns_day.sql
     description: table des couts publicitaires
     columns:
