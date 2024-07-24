@@ -66,7 +66,28 @@ models:
         description: ca
       - name: quantity
         description: quantite de products vendus
-  
+  - name: int_campaign.sql
+    description: table des campagnes
+    columns:
+      - name: date_date
+        description: date des campaign
+      - name: paid_source
+        description: source des paiements
+      - name: campaign_key
+        description: clé de la campaign 
+      - name: campaign_name
+        description: nom de la campaign 
+      - name: ads_cost
+        description: cout de la campaign 
+      - name: impression
+        description: nombres d'impressions
+      - name: click
+        description: nombres de clicks
+
+
+
+
+
 
   
               
