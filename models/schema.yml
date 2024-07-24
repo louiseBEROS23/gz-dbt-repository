@@ -97,6 +97,64 @@ models:
       description: sum des impressions par jour
     - name: ads_click
       description: sum des click par jour
+  - name: stg_raw__ship
+    description: table des commandes
+    columns:
+      - name: orders_id
+        description: numero des commandes
+        tests:
+          - unique
+          - not_null
+      - name: shipping_fee
+        description: envoie des commandes
+      - name: logcost
+        description: cout de logistique
+      - name: ship_cost
+        description: cout de l'envoi
+  - name: stg_raw__sales
+    description: tables des ventes 
+    columns:
+      - name: date_date
+        description: date des ventes
+      - name: orders_id
+        description: nb de commandes
+      - name: products_id
+        description: numero des produits
+      - name: revenue
+        description: ca
+      - name: quantity
+        description: quantite de products vendus
+  - name: finance_campaigns_day.sql
+    description: table des couts publicitaires
+    columns:
+      - name: date_date
+        description: date des campaign
+      - name: nb_transactions
+        description: nombre de transaction
+      - name: revenue
+        description: revenue de la campaign
+      - name: average_basket
+        description: panier moyen 
+      - name: average_basket_bis
+        description: panier moyen bis ? 
+      - name: margin
+        description: marge commerciale
+      - name: operational_margin
+        description: marge opérationnelle
+      - name: purchase_cost
+        description: cout d'achat
+      - name: shipping_fee
+        description: cout d'envoie des commandes
+      - name: logcost
+        description: cout d'ahceminement des commandes
+      - name: ship_cost
+        description: cout d'envoie 
+      - name: quantity
+        description: nb de qty vendu 
+      - name: ads_margin
+        description: marge publicitaire
+
+
 
 
 
