@@ -14,6 +14,19 @@ sources:
       - name: ship
         identifier: raw_gz_ship
         description: tables des frais liés aux commandes
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: données de la campagne fb 
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: données de la campagne criteo
+      - name: bing
+        identifier: raw_gz_bing
+        description: données de la campagne bing
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: données de la campagne adwords
+      
 
 models:
   - name: stg_raw__product
